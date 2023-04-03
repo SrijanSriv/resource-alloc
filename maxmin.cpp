@@ -143,5 +143,5 @@ namespace scheduler {
             cout << "\n\n";
         }
         cout << "Number of allocations:\n" << allocs << "\n\n";
-        }
+    }
 }
