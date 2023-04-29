@@ -88,6 +88,7 @@ namespace scheduler {
         estimated_time = et;
         pro_resource = pr;
         alloc_time.resize(m, 0);
+        task_resource.resize(n, {vector<ll> (r, 0), 0});
 
         for (ll row = 0; row < n; row++) {
             for (ll col = 0; col < r; col++) {

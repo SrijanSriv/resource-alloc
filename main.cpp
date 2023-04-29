@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
     IOS;
-    /* template to take input from user
+    // template to take input from user
     ll n, m, r;
     vector<vector<ll>> estimated_time;
     vector<vector<ll>> task_resource;
@@ -37,12 +37,24 @@ int main() {
             cin >> pro_resource[row][col];
         }
     }
-    */
+    
 
-    auto fcfsrunner = new scheduler::fcfs();
+    auto fcfsrunner = new scheduler::fcfs(estimated_time, task_resource, pro_resource);
     fcfsrunner->allocateTasks();
-
     delete fcfsrunner;
+
+    cout <<"\n\nMinmin Allocation:\n";
+
+    auto miniminrunner = new scheduler::minmin(estimated_time, task_resource, pro_resource);
+    miniminrunner->allocateTasks();
+    delete miniminrunner;
+
+    cout <<"\n\nMaxmin Allocation:\n";
+
+    auto maxminrunner = new scheduler::maxmin(estimated_time, task_resource, pro_resource);
+    maxminrunner->allocateTasks();
+    delete maxminrunner;
+
 
     return 0;
 }
